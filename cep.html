@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Endereço por CEP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="cep.css">
+</head>
+<body>
+    <h1>Consulta de Endereço por CEP</h1>
+    <br>
+
+    <div class="container">
+        <div class="left-column">
+            <h2>Consulta de CEP</h2>
+            <div class="cep-input-container">
+                <label for="cepInput">CEP: </label>
+                <input type="text" id="cepInput">
+                <button onclick="consultarCEP()">Consultar</button>
+            </div>
+
+            <br>
+
+            <h2>Registros Armazenados</h2>
+            <select id="ordenacao" onchange="ordenarRegistros()">
+                <option value="cidadeCrescente">Cidade (Crescente)</option>
+                <option value="cidadeDecrescente">Cidade (Decrescente)</option>
+                <option value="bairroCrescente">Bairro (Crescente)</option>
+                <option value="bairroDecrescente">Bairro (Decrescente)</option>
+                <option value="estadoCrescente">Estado (Crescente)</option>
+                <option value="estadoDecrescente">Estado (Decrescente)</option>
+            </select>
+            <ul id="registros">
+            </ul>
+        </div>
+
+        <div class="right-column">
+            <h2>Mapa</h2>
+            <div id="map"></div>
+        </div>
+    </div>
+</body>
+<script src="cep.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</html>
